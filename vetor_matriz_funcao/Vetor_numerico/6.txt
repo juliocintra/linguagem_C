@@ -1,0 +1,32 @@
+/* Ler um vetor com 10 valores inteiros e mostrar o vetor  
+invertido no final.
+
+Ex.:
+
+Vet = 1 2 3 4 5 6 7 8 9 10
+
+Vet inv = 10 9 8 7 6 5 4 3 2 1
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int i, vet[10];
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%d", &vet[i]);
+	}
+
+	printf("\n\nVet inv = ");
+	for (i = 9; i >= 0; i--)
+	{
+		printf("%d  ", vet[i]);	
+	}
+
+	printf("\n\n\n");
+	system("pause");
+}

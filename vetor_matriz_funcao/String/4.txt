@@ -1,0 +1,32 @@
+/*	Ler uma frase qualquer, e após a leitura, 
+mostrar a frase no sentido contrário.
+
+Ex.:
+
+Frase: abcdef
+
+fedcba
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+main()
+{
+	char frase[101];
+	int i;
+	
+	printf("Frase: ");
+	gets(frase);
+
+	printf("\n\nFrase ao contrario: ");	
+	for (i = strlen(frase) - 1; i >= 0; i--)
+	{
+		printf("%c", frase[i]);	
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

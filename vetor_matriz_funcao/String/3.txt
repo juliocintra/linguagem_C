@@ -1,0 +1,27 @@
+/*	Ler uma frase qualquer, e após a leitura, 
+substituir todos os a's por @'s e mostrar a 
+frase no final.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	char frase[101];
+	int i;
+	
+	printf("Frase: ");
+	gets(frase);
+	
+	for (i = 0; frase[i] != '\0'; i++)
+	{
+		if (frase[i] == 'a')
+			frase[i] = '@';	
+	}
+	
+	printf("\n\n%s", frase);
+	
+	printf("\n\n\n");
+	system("pause");		
+}

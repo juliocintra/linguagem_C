@@ -1,0 +1,62 @@
+/*	Ler uma matriz 3x5 de inteiros, e após a leitura, trocar
+os valores da primeira linha com os valores da última linha e
+mostrar a matriz no final.
+
+Ex.:
+
+Entrada:			
+
+1 1 1 1 1
+
+2 2 2 2 2
+
+3 3 3 3 3
+
+
+Saída:
+
+3 3 3 3 3
+
+2 2 2 2 2
+
+1 1 1 1 1
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int mat[3][5], i, j, aux;
+	
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			printf("Mat[%d][%d]: ", i, j);
+			scanf("%d", &mat[i][j]);
+		}
+		printf("\n");
+	}
+
+	for (j = 0; j < 5; j++)
+	{
+		aux = mat[0][j];
+		mat[0][j] = mat[2][j];
+		mat[2][j] = aux;	
+	}
+	
+	printf("\n\nMat =\n\n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			printf("%d  ", mat[i][j]);
+		}
+		printf("\n\n");
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

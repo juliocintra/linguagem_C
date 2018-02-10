@@ -1,0 +1,29 @@
+/* Caracteres e strings
+	- Declaração
+	- Atribuição
+	- Leitura e Escrita
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+main()
+{
+	char nome[21];
+	int i;
+	
+	printf("Nome: ");
+	gets(nome);
+	
+	printf("\n\n\n");
+	
+	for (i = 0; nome[i] != '\0'; i++)
+	{
+		printf("%c", nome[i]);
+		Beep(1000, 100);	
+	}
+		
+	printf("\n\n\n");
+	system("pause");
+}

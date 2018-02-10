@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+
+main()
+{
+	char senha[51], crt;
+	int i;
+	
+	printf("Digite sua senha: ");
+	i = 0;
+	do
+	{
+		crt = getch();
+		if (crt != 13) // ENTER
+		{
+			senha[i] = crt;
+			i++;
+			printf("*");
+		}
+	}
+	while(crt != 13);
+	
+	senha[i] = '\0';
+	
+	if (strcmp(senha, "12345") == 0)
+	{
+		printf("\n\nSua senha: %s", senha);
+	}
+	else
+	{
+		printf("\n\nSenha incorreta!!");	
+	}
+	
+	printf("\n\n\n");
+	system("pause");	
+}

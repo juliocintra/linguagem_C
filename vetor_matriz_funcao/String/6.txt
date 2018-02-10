@@ -1,0 +1,40 @@
+/*	Ler uma frase, e após a leitura, calcular e 
+mostrar a qtde de palavras contidas nessa frase.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	char frase[101];
+	int i, qp;
+	
+	printf("Frase: ");
+	gets(frase);
+	
+	i = 0;	
+	while (frase[i] == ' ')
+	{
+		i++;	
+	}
+
+	if (frase[i] == '\0')
+		qp = 0;
+	else
+		qp = 1;
+	
+	while (frase[i] != '\0')
+	{
+		if (frase[i] == ' ' && frase[i + 1] != ' ' &&
+				frase[i + 1] != '\0')
+			qp++;
+			
+		i++;
+	}
+	
+	printf("\n\nQtde de palavras = %d", qp);
+	
+	printf("\n\n\n");
+	system("pause");
+}

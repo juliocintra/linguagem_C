@@ -1,0 +1,9 @@
+1 - Ler 3 vetores, e ver se algum numero entre eles se repetem. 
+Caso se repita, mostar quais numeros. (pode aparecer mais de uma vez)
+
+2 - O main vai ler 4 numeros inteiros distintos, chamar uma funcão e achar os 
+numeros do meio. 
+
+Ex: 1, 2, 3, 4. 
+
+Deve Aparecer 2 e 3. 

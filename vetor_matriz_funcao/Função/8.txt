@@ -1,0 +1,43 @@
+/*	Criar uma função para inverter os valores de um vetor de 
+inteiros passado como parâmetro, juntamente com seu tamanho.
+O main deve ler um vetor qualquer (ex. 5 valores), chamar a
+função e mostrar o vetor no final para ver se os valores foram
+invertidos.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void invVetor(int pvet[], int ptam)
+{
+	int i, j, aux;
+	
+	for (i = 0, j = ptam - 1; i < ptam / 2; i++, j--)
+	{
+		aux = pvet[i];
+		pvet[i] = pvet[j];
+		pvet[j] = aux;
+	}
+}
+
+main()
+{
+	int vet[5], i;
+	
+	for (i = 0; i < 5; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%d", &vet[i]);	
+	}
+	
+	invVetor(vet, 5);
+	
+	printf("\n\nVetor invertido = ");	
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d  ", vet[i]);
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

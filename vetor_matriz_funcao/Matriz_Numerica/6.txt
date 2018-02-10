@@ -1,0 +1,36 @@
+/* Ler uma matriz 4x3 de reais (float) e, após a leitura,
+calcular e mostrar a soma das linhas individualmente, isto é,
+para cada linha deve ser mostrado um resultado.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	float mat[4][3], soma;
+	int i, j;
+	
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("Mat[%d][%d]: ", i, j);
+			scanf("%f", &mat[i][j]);
+		}
+		printf("\n");
+	}
+	
+	for (i = 0; i < 4; i++)
+	{
+		soma = 0;
+		for (j = 0; j < 3; j++)
+		{
+			soma = soma + mat[i][j];
+		}
+		printf("\nSoma da linha %d = %.1f", i, soma);
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

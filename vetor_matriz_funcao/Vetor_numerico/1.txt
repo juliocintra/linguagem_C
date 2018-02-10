@@ -1,0 +1,24 @@
+// Vetores (numéricos)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int i, vet[10];
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%d", &vet[i]);	
+	}
+	
+	printf("\n\nVet = ");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d  ", vet[i]);	
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

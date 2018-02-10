@@ -1,0 +1,39 @@
+/* Ler uma matriz 3x3 de inteiros e, após a leitura, calcular
+e mostrar o produto dos valores múltiplos de 5 dessa matriz.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int mat[3][3], i, j, prod;
+	
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("Mat[%d][%d]: ", i, j);
+			scanf("%d", &mat[i][j]);
+		}
+		printf("\n");
+	}
+	
+	prod = 1;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			if (mat[i][j] % 5 == 0)
+				prod = prod * mat[i][j];		
+		}
+	}
+	
+	if (prod != 1)
+		printf("\n\nProduto dos multiplos de 5 = %d", prod);
+	else
+		printf("\n\nNAO ha' multiplos de 5");
+	
+	printf("\n\n\n");
+	system("pause");	
+}

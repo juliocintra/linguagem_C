@@ -1,0 +1,37 @@
+/* Funções: calcular e retornar a média aritmética entre
+3 valores. O main deve ler 3 valores, chamar a função e 
+mostrar o resultado.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float media3(float pa, float pb, float pc)
+{
+	float m;
+	
+	m = (pa + pb + pc) / 3;
+	
+	return m;
+}
+
+main()
+{
+	float a, b, c, ma;
+	
+	printf("A: ");
+	scanf("%f", &a);
+
+	printf("\nB: ");
+	scanf("%f", &b);
+
+	printf("\nC: ");
+	scanf("%f", &c);
+
+	ma = media3(a, b, c);
+	
+	printf("\n\nMedia aritmetica = %.3f", ma);
+	
+	printf("\n\n\n");
+	system("pause");
+}

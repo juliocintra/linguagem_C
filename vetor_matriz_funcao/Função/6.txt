@@ -1,0 +1,42 @@
+/* Criar uma função para calcular e retornar o maior
+valor de um vetor de reais. A função recebe como parâmetros o 
+vetor e seu tamanho. O main deve ler um vetor com 10 valores,
+chamar a função e mostrar o resultado no final.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float maiorVetor(float pvet[], int ptam)
+{
+	float m;
+	int i;
+	
+	m = pvet[0];
+	for (i = 1; i < ptam; i++)
+	{
+		if (pvet[i] > m)
+			m = pvet[i];	
+	}
+	
+	return m;
+}
+
+main()
+{
+	float vet[10], ma;
+	int i;
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%f", &vet[i]);	
+	}
+	
+	ma = maiorVetor(vet, 10);
+	
+	printf("\n\nMaior = %.1f", ma);
+	
+	printf("\n\n\n");
+	system("pause");
+}

@@ -1,0 +1,44 @@
+/* Ler um vetor com 5 valores inteiros e não permitir valores 
+repetidos. Mostrar o vetor após a leitura.
+
+  Ex.:
+    
+    X[0]: 10
+    X[1]: 20
+    X[2]: 10
+    Valor repetido. Digite novamente.
+    X[2]: 
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int vet[5], i, k, achou;
+	
+	for (i = 0; i < 5; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%d", &vet[i]);
+		
+		achou = 0; // 0 indica que não achou
+		for (k = 0; k < i; k++)
+		{
+			if (vet[i] == vet[k])	
+			{
+				achou = 1; // 1 indica que achou
+				break;	
+			}
+		}
+		
+		if (achou)
+		{
+			printf("\nValor repetido! Digite novamente.\n\n");
+			i--;
+		}
+	}
+
+	printf("\n\n\n");
+	system("pause");	
+}

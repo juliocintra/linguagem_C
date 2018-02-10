@@ -1,0 +1,32 @@
+/*	Ler uma frase, e após a leitura, colocar 
+letra maiúscula na primeira letra de todas as 
+palavras dessa frase e mostrá-la no final.
+
+Dica: use a função toupper()  "ctype.h"
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+main()
+{
+	char frase[101];
+	int i;
+	
+	printf("Frase: ");
+	gets(frase);
+
+	frase[0] = toupper(frase[0]);
+	
+	for (i = 0; frase[i] != '\0'; i++)
+	{
+		if (frase[i] == ' ')
+			frase[i + 1] = toupper(frase[i + 1]);
+	}
+	
+	printf("\n\n%s", frase);
+
+	printf("\n\n\n");
+	system("pause");
+}

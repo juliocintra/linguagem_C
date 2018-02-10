@@ -1,0 +1,55 @@
+/* Funções: criar uma função para calcular a qtde de 
+combinações entre N números M a M, através da fórmula abaixo.
+A fórmula usa o fatorial para realizar o cálculo, então,
+o cálculo do fatorial também deve ser feito por uma função.
+O main deve ler o valor de N e M, chamar a função e mostrar
+o resultado.
+
+							 n!
+C n, m = ---------------
+			    m! . (n - m)!
+*/
+ 
+#include <stdio.h>
+#include <stdlib.h>
+
+float fat(int pn)
+{
+	float f = 1;
+	int x;
+	
+	for (x = 2; x <= pn; x++)
+	{
+		f = f * x;
+	}
+	
+	return f;		
+}
+
+float comb(int pn, int pm)
+{
+	float c;
+	
+	c = fat(pn) / (fat(pm) * fat(pn - pm));
+	
+	return c;
+}
+
+main()
+{
+	int n, m;
+	float co;
+	
+	printf("N: ");
+	scanf("%d", &n);
+	
+	printf("\nM: ");
+	scanf("%d", &m);
+	
+	co = comb(n, m);
+	
+	printf("\n\nCombinacao %d, %d = %.0f", n, m, co);
+	
+	printf("\n\n\n");
+	system("pause");	
+}

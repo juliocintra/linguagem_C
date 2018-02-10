@@ -1,0 +1,34 @@
+/* Ler um vetor com 7 valores reais (float) e, após a leitura,
+  calcular e mostrar o menor e o maior dos valores.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int i;
+	float vet[7], me, ma;
+	
+	for (i = 0; i < 7; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%f", &vet[i]);
+	}
+	
+	me = ma = vet[0];
+	for (i = 1; i < 7; i++)
+	{
+		if (vet[i] < me)
+			me = vet[i];
+		else
+			if (vet[i] > ma)
+				ma = vet[i];	
+	}
+	
+	printf("\n\nMenor = %.1f", me);
+	printf("\n\nMaior = %.1f", ma);
+	
+	printf("\n\n\n");
+	system("pause");
+}

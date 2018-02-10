@@ -1,0 +1,45 @@
+/* Criar uma função que calcule a soma e o produto de todos os
+valores inteiros de um intervalo. O início e o fim do intervalo
+devem ser passados por valor para a função, juntamente com 2 
+parâmetros por referência para receberem a soma e o produto.
+O main deve ler o início e fim do intervalo, chamar a função
+e mostrar os resultados da soma e do produto no final.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void somaProduto(int pi, int pf, int *ps, int *pp)
+{
+	int n, s, p;
+	
+	s = 0;
+	p = 1;
+	for (n = pi; n <= pf; n++)
+	{
+		s = s + n;
+		p = p * n;
+	}
+	
+	*ps = s;
+	*pp = p;
+}
+
+main()
+{
+	int ini, fim, soma, prod;
+	
+	printf("Inicio do intervalo: ");
+	scanf("%d", &ini);
+
+	printf("\nFim do intervalo: ");
+	scanf("%d", &fim);
+	
+	somaProduto(ini, fim, &soma, &prod);
+	
+	printf("\n\nSoma = %d", soma);
+	printf("\n\nProduto = %d", prod);
+	
+	printf("\n\n\n");
+	system("pause");
+}

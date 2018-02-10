@@ -1,0 +1,39 @@
+/*	Programa para calcular e mostrar o comprimento, a área
+e o volume usando as fórmulas abaixo. Os cálculos devem
+ser feitos por apenas um função e retornados por parâmetros
+por referência. O main deve ler o raio, chamar as funções 
+e mostrar os resultados no final.
+
+comp = 2 . PI . raio
+
+area = PI . raio²
+
+vol = 4 . PI . raio³ / 3				onde PI = 3.14
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void compAreaVol(float pr, float *pc, float *pa, float *pv)
+{
+	*pc = 2 * 3.14 * pr;
+	*pa = 3.14 * pr * pr;
+	*pv = 4 * 3.14 * pr * pr * pr / 3;	
+}
+
+main()
+{
+	float r, c, a, v;
+	
+	printf("Raio (m): ");
+	scanf("%f", &r);
+	
+	compAreaVol(r, &c, &a, &v);
+	
+	printf("\n\nComprimento = %.2f m", c);
+	printf("\n\nArea = %.2f m2", a);
+	printf("\n\nVolume = %.2f m3", v);
+	
+	printf("\n\n\n");
+	system("pause");
+}

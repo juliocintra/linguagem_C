@@ -1,0 +1,40 @@
+/* Ler uma matriz 3x2 de inteiros, calcular e mostrar, após
+a leitura, o menor e o maior valor dessa matriz.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int x[3][2], i, j, menor, maior;
+	
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 2; j++)
+		{
+			printf("X[%d][%d]: ", i, j);
+			scanf("%d", &x[i][j]);
+		}
+		printf("\n");
+	}
+	
+	menor = maior = x[0][0];
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 2; j++)
+		{
+			if (x[i][j] < menor)
+				menor = x[i][j];
+			else
+				if (x[i][j] > maior)
+					maior = x[i][j];
+		}
+	}
+	
+	printf("\n\nMenor = %d", menor);
+	printf("\n\nMaior = %d", maior);
+	
+	printf("\n\n\n");
+	system("pause");
+}

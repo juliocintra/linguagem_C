@@ -1,0 +1,37 @@
+/* Ler uma frase qualquer, e após a leitura, 
+mostrar a qtde de vogais e a qtde de consoantes 
+dessa frase.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+main()
+{
+	char frase[101];
+	int i, qv, qc;
+	
+	printf("Frase: ");
+	gets(frase);
+
+	qv = qc = 0;
+	for (i = 0; frase[i] != '\0'; i++)
+	{
+		frase[i] = tolower(frase[i]);
+		
+		if (frase[i] == 'a' || frase[i] == 'e' ||
+				frase[i] == 'i' || frase[i] == 'o' ||
+				frase[i] == 'u')
+			qv++;	
+		else
+			if (frase[i] >= 'a' && frase[i] <= 'z')
+				qc++;
+	}
+	
+	printf("\n\nQtde de vogais = %d", qv);
+	printf("\n\nQtde de consoantes = %d", qc);
+	
+	printf("\n\n\n");
+	system("pause");
+}

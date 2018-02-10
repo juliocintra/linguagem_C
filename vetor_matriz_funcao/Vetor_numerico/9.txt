@@ -1,0 +1,53 @@
+/* Ler um vetor com 7 valores inteiros e, após a leitura, 
+ler um inteiro qualquer (x), buscar pelo primeiro valor 
+igual a x no vetor e mostrar sua posição. Caso, não 
+encontre x, o programa deve mostrar -1 como posição.
+
+  Ex. 1: encontrou
+    
+    Vet = 1  2  3  4  5  6  7
+    
+    X = 5
+    
+    Posicao = 4
+
+  Ex. 2: não encontrou
+    
+    Vet = 6  2  8  4  2  6  9
+    
+    X = 10
+    
+    Posicao = -1
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int vet[7], pos, x, i;
+	
+	for (i = 0; i < 7; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%d", &vet[i]);	
+	}
+	
+	printf("\n\nValor a ser encontrado: ");
+	scanf("%d", &x);
+	
+	pos = -1; // -1 indica que não encontrou
+	for (i = 0; i < 7; i++)
+	{
+		if (vet[i] == x)
+		{
+			pos = i;
+			break;
+		}
+	}
+	
+	printf("\n\nPosicao do valor: %d", pos);
+	
+	printf("\n\n\n");
+	system("pause");
+}

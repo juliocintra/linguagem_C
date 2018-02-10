@@ -1,0 +1,33 @@
+/* Ler um vetor com 10 valores reais (float) e criar um clone
+desse vetor, ou seja, um novo vetor com os mesmos valores do 
+primeiro. Mostrar o vetor clone no final.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+	int i;
+	float vet[10], clone[10];
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%f", &vet[i]);
+	}
+	
+	for (i = 0; i < 10; i++)
+	{
+		clone[i] = vet[i];	
+	}
+	
+	printf("\n\nClone = ");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%.1f  ", clone[i]);	
+	}
+	
+	printf("\n\n\n");
+	system("pause");
+}

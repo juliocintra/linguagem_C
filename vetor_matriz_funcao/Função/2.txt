@@ -1,0 +1,65 @@
+/* Funções: criar uma função para calcular o menor valor
+entre 3 valores inteiros passados como parâmetros. O main
+deve ler 3 números, chamar a função e mostrar o resultado.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+//**************************************
+int menor(int pa, int pb, int pc)
+{	
+	int m;
+	
+	if (pa < pb && pa < pc)
+		m = pa;
+	else
+		if (pb < pc)
+			m = pb;
+		else
+			m = pc;		
+			
+	return m;
+}
+
+//**************************************
+int maior(int pa, int pb, int pc)
+{	
+	int m;
+	
+	if (pa > pb && pa > pc)
+		m = pa;
+	else
+		if (pb > pc)
+			m = pb;
+		else
+			m = pc;		
+			
+	return m;
+}
+
+//**************************************
+main()
+{
+	int a, b, c, me, ma;
+	
+	printf("A: ");
+	scanf("%d", &a);
+
+	printf("\nB: ");
+	scanf("%d", &b);
+
+	printf("\nC: ");
+	scanf("%d", &c);
+	
+	me = menor(a, b, c);
+	
+	printf("\n\nMenor = %d", me);
+	
+	ma = maior(a, b, c);
+	
+	printf("\n\nMaior = %d", ma);
+
+	printf("\n\n\n");
+	system("pause");
+}

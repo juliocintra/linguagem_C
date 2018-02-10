@@ -1,0 +1,72 @@
+Correção da Prova A1
+
+Questão 1:
+	
+main()
+{
+	float vet[500], soma, media, qp, qtmenor;
+	int i;
+	
+	for (i = 0; i < 500; i++)
+	{
+		printf("Vet[%d]: ", i);
+		scanf("%f", &vet[i]);
+	}
+	
+	soma = 0;
+	qp = 0;
+	for (i = 0; i < 500; i++)
+	{
+		if (vet[i] > 0)
+		{
+			soma = soma + vet[i];
+			qp++;
+		}
+	}
+	
+	media = soma / qp;
+	
+	qtmenor = 0;
+	for (i = 0; i < 500; i++)
+	{
+		if (vet[i] < media)
+			qtmenor++;
+	}
+	
+	printf("\n\nMedia dos positivos = %f", media);
+	printf("\n\nQtde menor que a media = %f", qtmenor);
+}
+
+
+Questão 2:
+
+main()
+{
+	int mat[100][100], i, j, soma, prod;
+	
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			printf("Mat[%d][%d]: ", i, j);
+			scanf("%d", &mat[i][j]);
+		}
+	}
+	
+	soma = 0;
+	for (i = 0; i < 100; i++)
+	{
+		for (j = 0; j < 100; j++)
+		{
+			if (mat[i][j] % 2 == 0)
+				soma = soma + mat[i][j];
+		}
+	}
+	
+	prod = 1;
+	for (i = 0; i < 100; i++)
+		prod = prod * mat[i][99 - i];
+		
+	printf("\n\nSoma dos pares = %d", soma);
+	printf("\n\nProduto da diagonal secundaria = %d", prod);
+}

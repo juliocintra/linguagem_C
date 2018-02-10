@@ -1,0 +1,64 @@
+/*	Criar uma função para calcular as 2 raízes reais de uma
+equação de 2o. grau. Os termos da equação são passados por 
+valor e as raízes são retornadas por 2 parâmetros por 
+referência. O main lê os termos, chama a função e mostra os 
+resultados das raízes. Caso o delta seja negativo, a função 
+não calcula e mostra uma mensagem de aviso.
+
+ax² + bx + c = 0
+
+delta = b² - 4ac
+
+r1 = (-b + raizq(delta)) / (2a)
+
+r2 = (-b - raizq(delta)) / (2a)
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int eq2g(float pa, float pb, float pc, float *pr1, float *pr2)
+{
+	float delta;
+	
+	delta = pb * pb - 4 * pa * pc;
+	
+	if (delta >= 0)
+	{
+		*pr1 = (-pb + sqrt(delta)) / (2 * pa);
+		*pr2 = (-pb - sqrt(delta)) / (2 * pa);
+		return 1; // o cálculo foi realizado com sucesso
+	}
+	else
+		return 0; // raízes complexas
+}
+
+main()
+{
+	float a, b, c, r1, r2;
+	int r;
+	
+	printf("A: ");
+	scanf("%f", &a);
+
+	printf("B: ");
+	scanf("%f", &b);
+
+	printf("C: ");
+	scanf("%f", &c);
+	
+	r = eq2g(a, b, c, &r1, &r2);
+	
+	if (r == 1)
+	{
+		printf("\n\nRaiz 1 = %f", r1);
+		printf("\n\nRaiz 2 = %f", r2);
+	}
+	else
+		printf("\n\nRaizes complexas!!");
+		
+	printf("\n\n\n");
+	system("pause");
+}

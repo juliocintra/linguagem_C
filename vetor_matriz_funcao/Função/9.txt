@@ -1,0 +1,41 @@
+/* Função para calcular e retornar o menor e o maior valor
+de um vetor (10 inteiros) através de dois parâmetros por
+referência.
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+void menorMaior(int pv[], int *pme, int *pma)
+{
+	int i, menor, maior;
+	
+	menor = maior = pv[0];
+	for (i = 1; i < 10; i++)
+	{
+		if (pv[i] < menor)
+			menor = pv[i];	
+		if (pv[i] > maior)
+			maior = pv[i];	
+	}
+	
+	*pme = menor;
+	*pma = maior;
+}
+
+main()
+{
+	int i, v[10], me, ma;
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("V[%d]: ", i);
+		scanf("%d", &v[i]);	
+	}
+	
+	menorMaior(v, &me, &ma);
+	
+	printf("\n\nMenor = %d\n\nMaior = %d", me, ma);
+	
+	printf("\n\n\n");
+	system("pause");
+}
