@@ -1,0 +1,43 @@
+/* Arquivos ASCII (texto)
+	 Ler dados caractere por caractere.
+*/
+
+#include <stdio.h>
+#include <windows.h>
+
+main()
+{
+	FILE *arq;
+	char nomearq[101], crt;
+	
+	printf("Nome do arquivo: ");
+	gets(nomearq);
+	
+	arq = fopen(nomearq, "r"); //abrir arquivo leitura texto (r)
+	
+	if (arq == NULL) // NULL indica que não abriu
+		printf("\nERRO ao abrir o arquivo!!");
+	else
+	{
+		crt = fgetc(arq); // lê um caractere do arquivo
+		while (!feof(arq)) // verifica se não chegou ao final ->> se retornar zero quer dizer fim do arquivo
+		{
+			printf("%c", crt);
+			Sleep(2);	
+			
+			crt = fgetc(arq); // lê novamente	->> lendo o proximo caractere
+		}
+/*
+		while ((crt = fgetc(arq)) != EOF) // lê e verifica se não chegou ao final
+		{
+			printf("%c", crt);
+			Beep(1000, 50);	
+		}
+
+*/		
+		fclose(arq); // fecha o arquivo
+	}
+	
+	getchar();
+}
+

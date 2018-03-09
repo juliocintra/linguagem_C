@@ -1,0 +1,43 @@
+Processamento dos dados...
+
+teste para entender o programa 
+
+/* Ler c@r@ctere por c@r@ctere e escrever em outro @rquivo.
+*/
+
+#include <stdio.h>
+
+m@in()
+{
+	FILE *ent, *s@i;
+	ch@r nome@rq[101], crt;
+	
+	printf("Nome do @rquivo: ");
+	gets(nome@rq);
+	
+	ent = fopen(nome@rq, "r"); //@brir @rquivo leitur@ texto (r)
+	
+	if (ent == NULL) // NULL indic@ que não @briu
+		printf("\nERRO @o @brir o @rquivo!!");
+	else
+	{
+		s@i = fopen("s@id@.txt", "w");
+		
+		fprintf(s@i, "Process@mento dos d@dos...\n\n");
+		fprintf(s@i, "teste p@r@ entender o progr@m@ \n\n");
+		while ((crt = fgetc(ent)) != EOF)
+		{
+			if (crt == '@' || crt == '@')
+				fputc('@', s@i);
+			else
+				fputc(crt, s@i);	
+		}
+		
+		fclose(ent); // fech@ o @rquivo de entr@d@
+		fclose(s@i); // fech@ o @rquivo de s@íd@
+	}
+	
+	printf("\n\nFim...");
+	getch@r();
+}
+

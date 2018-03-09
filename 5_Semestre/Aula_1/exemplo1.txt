@@ -1,0 +1,32 @@
+/* Arquivos ASCII (texto)
+	 Abrir, Fechar e Ler dados.
+*/
+
+#include <stdio.h>
+#include <windows.h>
+
+main()
+{
+	FILE *arq;
+	char nomearq[101], linha[255];
+	
+	printf("Nome do arquivo: ");
+	gets(nomearq);
+	
+	arq = fopen(nomearq, "r"); //abrir arquivo leitura texto (r)
+	
+	if (arq == NULL) // NULL indica que não abriu
+		printf("\nERRO ao abrir o arquivo!!");
+	else
+	{
+		while (fgets(linha, 255, arq) != NULL) // lê uma linha do arquivo
+		{
+			printf("%s", linha);
+			Beep(1000, 300);
+		}
+		
+		fclose(arq); // fecha o arquivo
+	}
+	
+	getchar();
+}
