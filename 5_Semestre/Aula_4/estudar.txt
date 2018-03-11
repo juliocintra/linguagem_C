@@ -1,0 +1,7 @@
+rb+
+wb+
+
+fwrite
+fread
+fseek -> posiciona o ponteiro
+ftell
